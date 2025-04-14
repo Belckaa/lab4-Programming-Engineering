@@ -1,0 +1,40 @@
+@startuml
+
+left to right direction
+
+' Актори
+actor Admin as A
+actor Manager as M
+actor User as U
+
+' Прецеденти (випадки використання)
+usecase UC1 as "Управління користувачами"
+usecase UC2 as "Створити/Редагувати задачу"
+usecase UC3 as "Призначити задачу"
+usecase UC4 as "Перегляд задач"
+usecase UC5 as "Коментування задач"
+usecase UC6 as "Відстеження історії"
+usecase UC7 as "Налаштування системи"
+usecase UC8 as "Сортування та фільтрація задач"
+usecase UC9 as "Пошук задач"
+usecase UC10 as "Отримання сповіщень"
+
+' Зв’язки
+A --> UC1 : Manage Users
+A --> UC7 : System Settings
+
+M --> UC2 : Manage Tasks
+M --> UC3 : Assign Tasks
+M --> UC4 : View Tasks
+M --> UC6 : Track History
+M --> UC10 : Receive Notifications
+
+U --> UC2 : Create/Edit Tasks
+U --> UC4 : View Tasks
+U --> UC5 : Comment on Tasks
+U --> UC6 : View History
+U --> UC8 : Sort/Filter Tasks
+U --> UC9 : Search Tasks
+U --> UC10 : Get Notifications
+
+@enduml
